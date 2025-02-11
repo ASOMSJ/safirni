@@ -1,16 +1,22 @@
-
 @import './_variable.scss';
 // @import './travel1.scss';
 // @import './travel2.scss';
 // @import './login.scss';
 
 @font-face {
-    font-family: "cairoFont";
-    src: url(../fonts/Cairo-Regular.ttf);
+    font-family: "shrFont";
+    src: url(../fonts/ScheherazadeNew-Medium.ttf);
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    font-family: "cairoFont", 'Cambria, Cochin, Georgia, Times, Times New Roman, serif' !important;
+    font-family: "shrFont", 'Cambria, Cochin, Georgia, Times, Times New Roman, serif' !important;
+    font-size: 18px;
 }
 
 .container-fluid {
@@ -19,28 +25,141 @@ body {
     overflow-x: hidden;
 }
 
+//القائمة العلوية 
 .top-menu {
     .navbar {
-       font-weight: bold;
-       padding: 0px 100px !important;
-       background-color: #FFF !important;
-       .navbar-nav {
-            li > a {
-                transition-property: background-color;
-                transition-duration: 0.5s;
+        position: fixed;
+        z-index: 10;
+        width: 100% !important;
+        padding: 10px 100px !important;
+        background-color: $black-color ;
+        left: 0;
+        right: 0;
 
-                &:hover {
-                    color: $main-color !important;
-                    background-color: $black-color;
-                    border-bottom: 1px solid $main-color;
+        .navbar-toggler {
+            border: none; // إزالة حدود الزر
+            background: none; // إزالة الخلفية الافتراضية
+            color: $whait-color ;
+            font-size: 25;
+        }
+      
+
+
+        &-brand {
+
+            color: $main-color;
+            padding-left: 20px;
+            font-size: 22px;
+
+            img {
+                height: 100%;
+                width: 40px;
+
+            }
+
+            &:hover {
+                color: $main-color;
+            }
+        }
+
+        .navbar-nav {
+            li>a {
+                position: relative; // يجعل البوردر قابل للتحكم بشكل مستقل
+                padding-bottom: 5px; // لإضافة مسافة بين النص والخط
+                transition: all 0.3s ease-in-out; // تأثير سلس
+
+                color: $whait-color;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 50%; // يبدأ الخط من المنتصف
+                    bottom: 0;
+                    width: 0; // يبدأ بدون عرض
+                    height: 2px; // سمك الخط
+                    background-color: rgba($gray-color, 0.5); // لون البوردر
+                    transition: all 0.3s ease-in-out;
+                    transform: translateX(-50%);
+                }
+
+                &:hover::after {
+                    width: 100%; // يظهر الخط بالكامل عند التمرير
                 }
             }
 
             .active a {
-                color: $main-color !important;
-                border-bottom: 1px solid $main-color;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 50%; // يبدأ الخط من المنتصف
+                    bottom: 0;
+                    width: 100%; // يبدأ بدون عرض
+                    height: 2px; // سمك الخط
+                    background-color: $main-color; // لون البوردر
+                    transition: all 0.3s ease-in-out;
+                    transform: translateX(-50%);
+                }
             }
         }
+
+        &.scrolled {
+            background-color: $whait-color !important; // لون الخلفية عند التمرير
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); // تأثير ظل خفيف
+
+            .navbar-toggler {
+               
+                color: $black-color ;
+               
+            }
+    
+            .navbar-nav {
+                a {
+                    color: $black-color !important; // لون الروابط بعد التمرير
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+//القسم التعريفي
+.hero {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: url('../images/hero.png') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: $whait-color;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($black-color, 0.8);
+    }
+
+    .content {
+        position: relative;
+        padding: 20px;
+        width: 70%;
+    }
+
+    h1 {
+        font-size: 50px;
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-size: 23px;
     }
 }
 
@@ -51,50 +170,86 @@ body {
 
 
 footer {
-    height: 450px;
+    padding: 10px;
     background-color: $black-color;
 
-    h2 {
-        color: $black-color;
-        font-size: 150%;   
-    }
-    
- 
-    
-  
+    .social-icons {
+        display: flex;
+        justify-content: center; // توسيط الأيقونات أفقياً
+        gap: 15px; // المسافة بين الأيقونات
+        padding: 5px 0;
 
-   
+        a {
+            text-decoration: none;
+            font-size: 24px; // حجم الأيقونات
+            color: $whait-color; // لون الأيقونات
+            transition: color 0.3s ease-in-out; // تأثير عند التحويل
+
+            &:hover {
+                color: $main-color; // لون ذهبي عند التحويل (يمكنك تغييره)
+            }
+        }
+    }
 
 
     .copyright {
-        color: $gray-color;
-        font-size: 90%;
-        font-weight: bold;
-    }
-    
-    .copyright-link {
-        text-decoration: none !important;
-        cursor: pointer;
+        color: $whait-color;
 
-        &:hover,
-        &:focus {
-            color: $black-color;
-        }
     }
+
 }
 
 @media (max-width: 991px) {
     .top-menu {
         .navbar {
-            padding: 0px 20px !important;
+            padding: 20px !important;
 
             .navbar-nav {
-                a {    
-                    border-bottom: none !important;
-                    padding-right: 5px;
+                transition: all 0.3s ease-in-out;
+                li>a {
+                    position: relative; // يجعل البوردر قابل للتحكم بشكل مستقل
+                    padding: 5px; 
+                    transition: all 0.3s ease-in-out; // تأثير سلس
+    
+                    color: $whait-color!important;
+    
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        right: 0; // يبدأ الخط من المنتصف
+                        bottom: 0;
+                        width: 0; // يبدأ بدون عرض
+                        height: 2px; // سمك الخط
+                        background-color: rgba($gray-color, 0.5); // لون البوردر
+                        transition: all 0.3s ease-in-out;
+                        transform: translateX(0%);
+                    }
+    
+                    &:hover::after {
+                        width: 50%; // يظهر الخط بالكامل عند التمرير
+                    }
+                }
+    
+                .active a {
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        right: 0; // 
+                        bottom: 0;
+                        width: 50%; // يبدأ بدون عرض
+                        height: 2px; // سمك الخط
+                        background-color: $main-color; // لون البوردر
+                        transition: all 0.3s ease-in-out;
+                        transform: translateX(0%);
+                    }
                 }
             }
+
+            .navbar-collapse{
+                transition: all 0.3s ease-in-out; // تأثير سلس
+            }
+
+            
         }
     }
 }
-

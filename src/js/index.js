@@ -18,6 +18,15 @@ $(function() {
       $('.navbar-nav > li > a[href="/login.html"]').parent().addClass('active');
     }
 
+    //  تغيير خلفية القائمة العلويه عند التمرير أكثر من 50 بكسل
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 50) { 
+          $(".navbar").addClass("scrolled");
+      } else {
+          $(".navbar").removeClass("scrolled");
+      }
+  });
+
    
     
  
