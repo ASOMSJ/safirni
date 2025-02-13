@@ -17,7 +17,6 @@
             <i class="fas fa-bars"></i>
           </button>
 
-
           <a href="index.html" class="navbar-brand p-0">
             <img src="./images/logo.png.png" alt="شركة سفرني">
             سفّرني
@@ -26,23 +25,34 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active p-2">
-                <a class="nav-link" href="/index.html">الرئيسية</a>
+                <a class="nav-link" href="#home">الرئيسية</a>
               </li>
               <li class="nav-item p-2">
-                <a class="nav-link" href="/login.html">تسجل الدخول </a>
+                <a class="nav-link" href="#services">خدماتنا</a>
               </li>
-
+              <li class="nav-item p-2">
+                <a class="nav-link" href="#tours">جولاتنا السياحية</a>
+              </li>
+              <li class="nav-item p-2">
+                <a class="nav-link" href="#contact">تواصل معنا</a>
+              </li>
+              <!-- <li class="nav-item p-2">
+                 <a class="nav-link btn btn-primary text-white ml-auto" href="/login.html">تسجيل الدخول</a>
+              </li> -->
             </ul>
+            <a class="nav-link btn btn-primary text-white " href="/login.html">تسجيل الدخول</a>
           </div>
         </nav>
       </div>
     </section>
 
-    <section class="hero">
-      <div class="content">
+    <section class="hero" id="home">
+      <div class="overlay"></div>
+      <div class="content text-center">
         <h1>اكتشف جمال العالم</h1>
         <p>الشركة السياحية الأفضل في الوطن العربي، هدفنا مساعدتك وتيسير أمورك، لا تتردد بالتواصل معنا فنحن هنا لنساعدك
           على إيجاد كل ما تحتاج له. إن كنت تبحث عن سكن أو جولة سياحية لتقضي أفضل الأوقات فقد وجدت طلبك.</p>
+        <a href="#services" class="btn btn-primary mt-3">استكشف خدماتنا</a>
       </div>
     </section>
 
@@ -74,7 +84,7 @@
               <div class="service-icon">
                 <i class="fas fa-map-marked-alt"></i>
               </div>
-              
+
               <h3>جولات سياحية</h3>
               <p>جولات سياحية خاصة مع أمهر السائقين كما نقدم جولات جماعية بأحدث الباصات مع أفضل المرشدين السياحيين الذين
                 يُجيدون اللغة العربية ولإنجليزية.</p>
@@ -85,7 +95,7 @@
               <div class="service-icon">
                 <i class="fas fa-plane-arrival"></i>
               </div>
-             
+
               <h3>الاستقبال من المطار</h3>
               <p>نقدم لكم خدمة الاستقبال من المطار وتوديعكم في المطار بحيث يكون مندوبنا متواجد دائمًا في خدمتكم أثناء
                 وصولكم أو ذهابكم للمطار مع أفضل وسائل النقل.</p>
@@ -95,7 +105,76 @@
       </div>
     </section>
 
+    <section id="tours" class="tours-section py-5">
+      <div class="container text-center">
+        <h2 class="section-title">جولاتنا السياحية</h2>
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="tour">
+              <img src="./images/osman-koycu-c6qF_lYvu2I-unsplash.jpg" alt="جولة اسطنبول " class="img-fluid">
+              <h3>رحلة إلى مدينة إسطنبول في تركيا</h3>
+              <p>السعر: 1000 دولار</p>
+              <a href="paris-tour.html" class="btn btn-primary">تفاصيل الرحلة</a>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="tour">
+              <img src="./images/francois-le-nguyen-VsY4IUi44Zo-unsplash.jpg" alt="جولةالقاهرة" class="img-fluid">
+              <h3>رحلة إلى الأهرامات في مصر</h3>
+              <p>السعر: 1200 دولار</p>
+              <a href="rome-tour.html" class="btn btn-primary">تفاصيل الرحلة</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section id="contact" class="contact-section py-5">
+      <div class="container text-center">
+        <h2 class="section-title">تواصل معنا</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="contact-info">
+              <div class="contact-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <h3>رقم الهاتف</h3>
+              <p>+123 456 7890</p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="contact-info">
+
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+
+              <h3>العنوان</h3>
+              <p>123 شارع السياحة، المدينة، البلد</p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="contact-info">
+              <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+              <h3>البريد الإلكتروني</h3>
+              <p>info@example.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509374!2d144.9537353153169!3d-37.81627917975195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d8b3c1b0b1b!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1611819446575!5m2!1sen!2sau"
+                width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                tabindex="0"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
 
     <footer>
