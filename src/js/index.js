@@ -6,6 +6,7 @@ import '../sass/style.scss';
 import '@fortawesome/fontawesome-free/js/all.min';
 
 
+
 $(function () {
 
   //  تحديد العنصر الذي يتم النقر عليه
@@ -76,6 +77,33 @@ $('a[href*="#"]')
       }
     }
   });
+
+$(function () {
+  // فتح النافذة وتكبير الصورة
+  function openModal(img) {
+    var modal = document.getElementById("myModal");
+    var modalImg = document.getElementById("img01");
+    modal.style.display = "block";
+    modalImg.src = img.src;
+  }
+
+  // إغلاق النافذة
+  function closeModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+  }
+
+
+  // إضافة الأحداث للنقر على الصور
+  $('.tour-gallery img').on('click', function () {
+    openModal(this);
+  });
+
+  // إضافة الحدث للنقر على زر الإغلاق
+  $('.close').on('click', function () {
+    closeModal();
+  });
+});
 
 // تحديد السنة الحالية
 var date = new Date();

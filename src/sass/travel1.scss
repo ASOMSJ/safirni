@@ -1,0 +1,102 @@
+$primary-color: #c19a6b; // لون رئيسي يعبر عن الذهب الفرعوني
+$secondary-color: #1f3a93; // لون ثانوي يعبر عن الأزرق الملكي
+$text-color: #2c3e50; // لون النص يعبر عن الاحترافية والوضوح
+
+body {
+    background-color: lighten($primary-color, 40%);
+}
+
+.tour-details {
+
+    padding: 120px 80px 50px;
+
+    h2 {
+        color: $secondary-color;
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+
+    p {
+        color: $text-color;
+        font-size: 20px;
+        line-height: 1.5;
+    }
+}
+
+.tour-gallery {
+    padding: 50px;
+
+    h2 {
+        color: $secondary-color;
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        .item {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+
+            img {
+                width: 300px; // تحديد عرض الصورة
+                height: 200px; // تحديد ارتفاع الصورة
+                object-fit: cover; // لضمان أن الصورة تغطي الأبعاد المحددة
+                border: 2px solid $secondary-color;
+                border-radius: 10px;
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+}
+
+// تنسيقات لتكبير الصورة عند الضغط عليها
+.modal {
+    display: none; // إخفاء النافذة بشكل افتراضي
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba($text-color, 0.9);
+
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+    }
+
+    .close {
+        position: absolute;
+        z-index: 2000;
+        bottom: 10%;
+        right: 50%;
+        color: $primary-color;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+
+        &:hover,
+        &:focus {
+            color: $secondary-color;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+}

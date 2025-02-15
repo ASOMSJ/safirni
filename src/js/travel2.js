@@ -1,0 +1,1 @@
+import '../sass/travel2.scss';

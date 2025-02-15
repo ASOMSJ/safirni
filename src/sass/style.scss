@@ -1,11 +1,9 @@
 @import './_variable.scss';
-// @import './travel1.scss';
-// @import './travel2.scss';
 // @import './login.scss';
 
 @font-face {
-    font-family: "shrFont";
-    src: url(../fonts/ScheherazadeNew-Medium.ttf);
+    font-family: "Tajawal";
+    src: url(../fonts/Tajawal-Medium.ttf);
 }
 
 html,
@@ -16,7 +14,7 @@ body {
 }
 
 body {
-    font-family: "shrFont", 'Cambria, Cochin, Georgia, Times, Times New Roman, serif' !important;
+    font-family: "Tajawal", 'Cambria, Cochin, Georgia, Times, Times New Roman, serif' !important;
     font-size: 18px;
     background-color: $light-color;
 }
@@ -151,8 +149,8 @@ body {
     justify-content: center;
     text-align: center;
     color: $whait-color;
-    padding-top: 30px;
-    margin-top: 50px;
+    padding-top: 70px;
+    
 
     .overlay {
         position: absolute;
@@ -244,8 +242,7 @@ body {
 // خدماتنا
 .services-section {
     background-color: $light-color;
-    padding: 50px 0;
-    margin-top: 50px;
+    padding: 80px 0 50px 0 !important;
     text-align: center;
 
 
@@ -298,8 +295,7 @@ body {
 // جولاتنا السياحية
 .tours-section {
     background-color: $light-color;
-    padding: 50px 0;
-    margin-top: 50px;
+    padding: 80px 0 50px 0 !important;
     text-align: center;
 
     .row {
@@ -361,8 +357,7 @@ body {
 // تواصل معنا
 .contact-section {
     background-color: $light-color;
-    padding: 50px 0;
-    margin-top: 50px;
+    padding: 80px 0 50px 0 !important;
     text-align: center;
 
     .contact-info {
