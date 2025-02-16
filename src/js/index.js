@@ -9,31 +9,35 @@ import '@fortawesome/fontawesome-free/js/all.min';
 
 $(function () {
 
-  //  تحديد العنصر الذي يتم النقر عليه
-  $(window).on('scroll', function () {
-    var scrollPos = $(document).scrollTop();
-    $('.navbar-nav a').each(function () {
-      var currLink = $(this);
-      var refElement = $(currLink.attr("href"));
-      if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-        $('.navbar-nav li').removeClass("active");
-        currLink.parent().addClass("active");
-      }
-      else {
-        currLink.parent().removeClass("active");
-      }
-    });
-  });
-
-
-  //  تغيير خلفية القائمة العلويه عند التمرير أكثر من 50 بكسل
-  $(window).scroll(function () {
+   //  تغيير خلفية القائمة العلويه عند التمرير أكثر من 50 بكسل
+   $(window).scroll(function () {
     if ($(this).scrollTop() > 50) {
       $(".navbar").addClass("scrolled");
     } else {
       $(".navbar").removeClass("scrolled");
     }
   });
+
+
+  //  تحديد العنصر الذي يتم النقر عليه
+  if (window.location.pathname.endsWith('index.html')) {
+    $(window).on('scroll', function () {
+      var scrollPos = $(document).scrollTop();
+      $('.navbar-nav a').each(function () {
+        var currLink = $(this);
+        var refElement = $(currLink.attr("href"));
+        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+          $('.navbar-nav li').removeClass("active");
+          currLink.parent().addClass("active");
+        } else {
+          currLink.parent().removeClass("active");
+        }
+      });
+    });
+  }
+
+
+ 
 
 
 
