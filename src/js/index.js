@@ -20,7 +20,7 @@ $(function () {
 
 
   //  تحديد العنصر الذي يتم النقر عليه
-  if (window.location.pathname.endsWith('index.html')) {
+  if (window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
     $(window).on('scroll', function () {
       var scrollPos = $(document).scrollTop();
       $('.navbar-nav a').each(function () {
