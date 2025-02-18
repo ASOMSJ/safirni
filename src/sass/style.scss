@@ -8,18 +8,21 @@
 
 html,
 body {
+
     margin: 0;
     padding: 0;
 
 }
 
 body {
+
     font-family: "Tajawal", 'Cambria, Cochin, Georgia, Times, Times New Roman, serif' !important;
     font-size: 18px;
     background-color: $light-color;
 }
 
 .container-fluid {
+    min-height: 100vh ;
     padding-right: 0px !important;
     padding-left: 0px !important;
     overflow-x: hidden;
@@ -150,7 +153,7 @@ body {
     text-align: center;
     color: $whait-color;
     padding-top: 70px;
-    
+
 
     .overlay {
         position: absolute;

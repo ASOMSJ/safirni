@@ -9,8 +9,8 @@ import '@fortawesome/fontawesome-free/js/all.min';
 
 $(function () {
 
-   //  تغيير خلفية القائمة العلويه عند التمرير أكثر من 50 بكسل
-   $(window).scroll(function () {
+  //  تغيير خلفية القائمة العلويه عند التمرير أكثر من 50 بكسل
+  $(window).scroll(function () {
     if ($(this).scrollTop() > 50) {
       $(".navbar").addClass("scrolled");
     } else {
@@ -37,7 +37,7 @@ $(function () {
   }
 
 
- 
+
 
 
 
@@ -82,34 +82,69 @@ $('a[href*="#"]')
     }
   });
 
-$(function () {
-  // فتح النافذة وتكبير الصورة
-  function openModal(img) {
-    var modal = document.getElementById("myModal");
-    var modalImg = document.getElementById("img01");
-    modal.style.display = "block";
-    modalImg.src = img.src;
-  }
+// $(function () {
+//   // فتح النافذة وتكبير الصورة
+//   function openModal(img) {
+//     var modal = document.getElementById("myModal");
+//     var modalImg = document.getElementById("img01");
+//     modal.style.display = "block";
+//     modalImg.src = img.src;
+//   }
 
-  // إغلاق النافذة
-  function closeModal() {
-    var modal = document.getElementById("myModal");
-    modal.style.display = "none";
-  }
+//   // إغلاق النافذة
+//   window.closeModal = function () {
+//     var modal = document.getElementById("myModal");
+//     modal.style.display = "none";
+//   }
+
+//   // عند الضغط على زر الإغلاق
+//   $('.close').click(function () {
+//     $('.modal').hide(); // إخفاء النافذة
+//   });
 
 
-  // إضافة الأحداث للنقر على الصور
-  $('.tour-gallery img').on('click', function () {
-    openModal(this);
-  });
 
-  // إضافة الحدث للنقر على زر الإغلاق
-  $('.close').on('click', function () {
-    closeModal();
-  });
-});
+//   // إضافة الأحداث للنقر على الصور
+//   $('.tour-gallery img').on('click', function () {
+//     openModal(this);
+//   });
+
+// });
+
 
 // تحديد السنة الحالية
+
+$(document).ready(function () {
+ // فتح النافذة وتكبير الصورة
+ function openModal(index) {
+  var modal = $('#myModal');
+  var carousel = $('#carouselExampleIndicators');
+  modal.css('display', 'block');
+  carousel.carousel(index);
+}
+
+// إغلاق النافذة
+function closeModal() {
+  var modal = $('#myModal');
+  modal.css('display', 'none');
+}
+
+// عند الضغط على زر الإغلاق
+$('.close').click(function () {
+  closeModal();
+});
+
+// إضافة الأحداث للنقر على الصور
+$('.item img').click(function () {
+  var index = $(this).parent().index();
+  openModal(index);
+});
+
+
+
+});
+
+
 var date = new Date();
 var year = date.getFullYear();
 document.getElementById("date").innerHTML = year;
